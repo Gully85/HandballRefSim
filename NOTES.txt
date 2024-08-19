@@ -5,3 +5,32 @@ better-level Question mode: Show an animation of a situation described in an off
 
 Full-Match mode: Show an animation of an ongoing match. Pause it occasionally and ask for the rule-conformous ref decision
 harder: You control the referee with WASD and viewing-direction with the mouse. Only things in the viewing cone are displayed
+
+
+
+First, just make it a console-app. Read questions from a file (localization, start with German only), print question and possible answers,
+read answers from user. At the end, summarize how many question were answered 100% correctly, and maybe more details
+
+Architecture thoughts: 
+Questions are stored in localization textfiles. questions-german.txt. Format is CSV. First line depicts columns. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Less important stuff:
+Found a typo in the official rule question (german). Question 1.12 c and d, it says "Spielfeldfeld"

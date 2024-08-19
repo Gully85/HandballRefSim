@@ -1,0 +1,19 @@
+rule,running_number,question_text,number_of_answers,answer1,answer2,answer3,answer4,answer5,answer6,...
+
+1,1,Welche Abmessungen sehen die Spielregeln für die Spielfläche vor?,4,40 x 20 Meter,42 x 20 Meter,38 x 18 Meter,"Länge zwischen 38 und 42, Breite zwischen 18 und 22 Metern"
+1,2,Welche Höhe und welche Breite (im Lichten) müssen die Tore haben?,4,"1,92 x 2,92 Meter","2,00 x 3,00 Meter","2,05 x 3,05 Meter","2,08 x 3,08 Meter"
+1,3,Wie breit muss die Torlinie zwischen den Torpfosten sein?,4,5 cm,6 cm,8 cm,10 cm
+1,4,Wie breit muss die Torauslinie sein?,4,5 cm,6 cm,8 cm,10 cm
+1,5,Wer entscheidet in Zweifelsfällen über die Richtigkeit der Zeitmessung?,4,Zeitnehmer und Sekretär,Die Schiedsrichter gemeinsam,Der Zeitnehmer,Die Schiedsrichter und der Zeitnehmer gemeinsam
+1,6,Wie viele Bälle müssen bei jedem Spiel mindestens vorhanden sein?,4,Ein Ball ist ausreichend,Mindestens drei Bälle müssen vorhanden sein,Dies ist im Regelwerk nicht festgelegt,Es müssen mindestens zwei Bälle vorhanden sein
+1,7,Wie viele Farben darf der Spielball haben?,4,1,2,3,Beliebig viele
+1,8,Die normale Spielzeit für Jugendmannschaften von 12-16 Jahren beträgt:,3,2 x 30 Minuten,2 x 20 Minuten,2 x 5 Minuten
+1,9,Das automatische Schlusssignal der Zeitmessanlage ist defekt. Wer darf in diesem Fall das Schlusssignal geben?,6,Nur der Sekretär,Nur der Feldschiedsrichter,Nur der Delegierte,Nur einer der Schiedsrichter,Nur der Zeitnehmer,"Einer der SR, der Zeitnehmer oder der Delegierte"
+2,10,Vier Konstellationen: Welcher Spieler ist teilnahmeberechtigt?,4,Bei Spielbeginn anwesend und im Spielprotokoll eingetragen,"Bei Spielbeginn nicht anwesend, aber im Spielprotokoll eingetragen","Bei Spielbeginn anwesend, aber nicht im Spielprotokoll eingetragen","Ein Spieler, der zwar nicht im Spielprotokoll eingetragen ist, aber vom Zeitnehmer die Spielerlaubnis erhält"
+2,11,Wie viele Spieler der angreifenden Mannschaft müssen mindestens bei Spielbeginn auf der Spielfläche antreten und im Spielprotokoll eingetragen sein?,4,6 Feldspieler,4 Feldspieler und 1 Torwart,5 Spieler,5 Feldspieler und 1 Torwart
+2,12,Worauf ist bei einem Wechselvorgang zu achten?,4,"Bei Time-out ist keine besondere Aufmerksamkeit erforderlich, da die Auswechselregeln nicht gelten",Der auszuwechselnde Spieler kann das Spielfeld auch außerhalb der eigenen Auswechsellinie verlassen,"Der auszuwechselnde Spieler muss das Spielfeld zunächst über die eigene Auswechsellinie verlassen, erst dann darf der einwechselnde Spieler ebenfalls nur über die eigene Auswechsellinie das Spielfeld betreten","Der einwechselnde Spieler kann nur über die eigene Auswechsellinie das Spielfeld betreten, aber bevor der auszuwechselnde Spieler das Spielfeld vollständig verlassen hat"
+2,13,"Wann ist es bis zu zwei Personen (Offiziellen und/oder Spielern) einer Mannschaft gestattet, die Spielfläche zusätzlich zu betreten?",4,Während einer Spielzeitunterbrechung,Während einer Spielzeitunterbrechung und mit Erlaubnis eines Schiedsrichters (Handzeichen 16),Bei Verletzung eines Spielers,Mit Erlaubnis des Zeitnehmers
+2,14,"Die Schiedsrichter geben das Zeichen zum Betreten der Spielfläche (Handzeichen 16), da sich ein Spieler von A verletzt hat. Wer darf die Spielfläche betreten?",4,"Zwei Offizielle von A, sonst niemand",Je zwei Offizielle beider Mannschaften,Zwei Personen (Offizielle oder Spieler) von A,Zwei Personen (Offizielle oder Spieler) von beiden Mannschaften
+2,15,Was ist bezüglich der Spielkleidung richtig?,3,Torwart und Spieler einer Mannschaft müssen eine identische Trikotfarbe benutzen,Die Spieler müssen auf dem Rücken mindestens 20 und auf der Brust mindestens 10 cm hohe Nummern tragen,Die Farbe schwarz ist ausschließlich den Schiedsrichtern vorbehalten
+
+
