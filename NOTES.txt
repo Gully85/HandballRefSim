@@ -1,0 +1,7 @@
+Idea: Build a tool to practice handball refereeing.
+
+simplest Question mode: Read out official rule questions, offer answer options, check against correct and give feedback
+better-level Question mode: Show an animation of a situation described in an official rule question. Offer answers etc
+
+Full-Match mode: Show an animation of an ongoing match. Pause it occasionally and ask for the rule-conformous ref decision
+harder: You control the referee with WASD and viewing-direction with the mouse. Only things in the viewing cone are displayed
