@@ -7,6 +7,7 @@
 from pypdf import PdfReader
 import re
 from enum import Enum, auto
+from dataclasses import dataclass, field
 
 sourcefile: str = "Fragenkatalog_Grundausbildung_mit_Loesungen_Stand_01062024.pdf"
 headerpages_to_skip: int = 2
@@ -25,6 +26,23 @@ class ParserState(Enum):
     NEUTRAL = auto()
     QUESTION = auto()
     ANSWER = auto()
+
+
+@dataclass
+class Record:
+    question: str = ""
+    answers: list[str] = field(default_factory=[])
+    correct_answers: list[bool] = field(default_factory=[])
+
+    def add_question_line(self, line: str) -> None:
+        """Add or append one line to this record's question. If this is the first line to be added,
+        remove the numbering."""
+        if self.question == "":
+            line_without_numbering: str = line.split(". ")[1]
+            self.question = line_without_numbering
+            return
+        # If there is already a line, handle empty space.
+        self.question = self.question.rstrip() + " " + line.lstrip()
 
 
 def main() -> None:
