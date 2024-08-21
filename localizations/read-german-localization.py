@@ -44,6 +44,19 @@ class Record:
         # If there is already a line, handle empty space.
         self.question = self.question.rstrip() + " " + line.lstrip()
 
+    def add_new_answer(self, line: str) -> None:
+        """Add a new answer option."""
+        self.answers.append(line)
+
+    def add_new_line_to_answer(self, line: str) -> None:
+        """Append given line to the last answer"""
+        last_answer: str = self.answers[-1]
+        if last_answer == "":
+            raise ValueError(
+                f"Found line {line} without preceding answer-option. Question was: {self.question}"
+            )
+        self.answers[-1] = last_answer.rstrip() + " " + line.lstrip()
+
 
 def main() -> None:
     reader: PdfReader = PdfReader(sourcefile)
