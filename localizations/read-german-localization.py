@@ -7,7 +7,8 @@
 from pypdf import PdfReader
 import re
 from enum import Enum, auto
-from dataclasses import dataclass, field
+
+from record import Record
 
 sourcefile: str = "Fragenkatalog_Grundausbildung_mit_Loesungen_Stand_01062024.pdf"
 headerpages_to_skip: int = 2
@@ -28,40 +29,14 @@ class ParserState(Enum):
     ANSWER = auto()
 
 
-@dataclass
-class Record:
-    question: str = ""
-    answers: list[str] = field(default_factory=[])
-    correct_answers: list[bool] = field(default_factory=[])
-
-    def add_question_line(self, line: str) -> None:
-        """Add or append one line to this record's question. If this is the first line to be added,
-        remove the numbering."""
-        if self.question == "":
-            line_without_numbering: str = line.split(". ")[1]
-            self.question = line_without_numbering
-            return
-        # If there is already a line, handle empty space.
-        self.question = self.question.rstrip() + " " + line.lstrip()
-
-    def add_new_answer(self, line: str) -> None:
-        """Add a new answer option."""
-        self.answers.append(line)
-
-    def add_new_line_to_answer(self, line: str) -> None:
-        """Append given line to the last answer"""
-        last_answer: str = self.answers[-1]
-        if last_answer == "":
-            raise ValueError(
-                f"Found line {line} without preceding answer-option. Question was: {self.question}"
-            )
-        self.answers[-1] = last_answer.rstrip() + " " + line.lstrip()
-
-
 def main() -> None:
     reader: PdfReader = PdfReader(sourcefile)
 
     print(f"Total pages in inputfile: {len(reader.pages)}")
+
+    results: list[Record] = []
+    current_record: Record = Record()
+    current_index: int = 0
 
     for page in reader.pages[headerpages_to_skip:]:
         fulltext: str = page.extract_text()
