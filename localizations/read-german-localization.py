@@ -21,6 +21,12 @@ question_marker: str = r"[1-9]\d*\. [A-Z].*"
 answer_marker: str = r"[a-z]\) .*"
 
 
+class ParserState(Enum):
+    NEUTRAL = auto()
+    QUESTION = auto()
+    ANSWER = auto()
+
+
 def main() -> None:
     reader: PdfReader = PdfReader(sourcefile)
 
@@ -29,10 +35,12 @@ def main() -> None:
     for page in reader.pages[headerpages_to_skip:]:
         fulltext: str = page.extract_text()
         lines: list[str] = fulltext.splitlines()
+        state: ParserState = ParserState.NEUTRAL
 
         for line in lines:
-            if re.match(question_marker, line):
-                print(line)
+            if state == ParserState.NEUTRAL:
+                if not re.match(question_marker, line):
+                    continue
 
         # during testing, only use the first not-skipped page
         break
