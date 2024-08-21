@@ -58,7 +58,7 @@ def main() -> None:
                 if not re.match(question_marker, line):
                     continue
                 state = ParserState.QUESTION
-                current_record = Record(question=line)
+                current_record = Record()
                 current_index = int(line.split(". ")[0])
 
             elif state == ParserState.QUESTION:
@@ -95,16 +95,19 @@ def sweep_for_solutions(reader: PdfReader) -> None:
     # same line when reading with PdfReader and splitting with str.splitlines(). )
     solutions_marker: str = r"\d\d\.\d\d\.\d{4}\s+Lösungen"
 
+    print("Sweeping inputfile for solutions section...")
+
     # The first solutions-page should start with a page-number header, then the big keyword "Lösungen"
     for pagenumber, page in enumerate(reader.pages):
-        print("\n")
         fulltext = page.extract_text()
         for line in fulltext.splitlines():
             if re.match(solutions_marker, line):
-                print(line)
+                global first_page_with_solutions
+                first_page_with_solutions = pagenumber
+                print(f"Found solutions section on page {pagenumber}ff")
+                return
 
-    global first_page_with_solutions
-    first_page_with_solutions = pagenumber
+    raise ValueError('The source file did not have a "Lösungen" section as expected.')
 
 
 def find_and_add_correct_answers(int, Record) -> None:

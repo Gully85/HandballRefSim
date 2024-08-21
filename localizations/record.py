@@ -8,8 +8,8 @@ from dataclasses import dataclass, field
 @dataclass
 class Record:
     question: str = ""
-    answers: list[str] = field(default_factory=[])
-    correct_answers: list[bool] = field(default_factory=[])
+    answers: list[str] = field(default_factory=list)
+    correct_answers: list[bool] = field(default_factory=list)
 
     def add_question_line(self, line: str) -> None:
         """Add or append one line to this record's question. If this is the first line to be added,
